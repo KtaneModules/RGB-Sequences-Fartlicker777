@@ -98,4 +98,64 @@ public class RGBSequences : MonoBehaviour {
         }
       }
     }
+    //U addw the tiwirub cplay
+    #pragma warning disable 414
+    private readonly string TwitchHelpMessage = @"Use !{0} # to press that corresponding LED.";
+    #pragma warning restore 414
+    IEnumerator ProcessTwitchCommand(string command){
+      if (Regex.IsMatch(command, @"^\s*0\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)) {
+        yield return null;
+        LEDses[0].OnInteract();
+        yield break;
+      }
+      else if (Regex.IsMatch(command, @"^\s*1\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)) {
+        yield return null;
+        LEDses[1].OnInteract();
+        yield break;
+      }
+      else if (Regex.IsMatch(command, @"^\s*2\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)) {
+        yield return null;
+        LEDses[2].OnInteract();
+        yield break;
+      }
+      else if (Regex.IsMatch(command, @"^\s*3\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)) {
+        yield return null;
+        LEDses[3].OnInteract();
+        yield break;
+      }
+      else if (Regex.IsMatch(command, @"^\s*4\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)) {
+        yield return null;
+        LEDses[4].OnInteract();
+        yield break;
+      }
+      else if (Regex.IsMatch(command, @"^\s*5\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)) {
+        yield return null;
+        LEDses[5].OnInteract();
+        yield break;
+      }
+      else if (Regex.IsMatch(command, @"^\s*6\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)) {
+        yield return null;
+        LEDses[6].OnInteract();
+        yield break;
+      }
+      else if (Regex.IsMatch(command, @"^\s*7\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)) {
+        yield return null;
+        LEDses[7].OnInteract();
+        yield break;
+      }
+      else if (Regex.IsMatch(command, @"^\s*8\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)) {
+        yield return null;
+        LEDses[8].OnInteract();
+        yield break;
+      }
+      else if (Regex.IsMatch(command, @"^\s*9\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)) {
+        yield return null;
+        LEDses[9].OnInteract();
+        yield break;
+      }
+      else {
+        yield return "sendtochaterror Not a valid command!";
+        yield break;
+      }
+    }
 }
