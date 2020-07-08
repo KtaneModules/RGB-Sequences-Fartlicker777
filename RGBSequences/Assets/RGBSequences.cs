@@ -49,13 +49,7 @@ public class RGBSequences : MonoBehaviour {
       }
       for (int i = 0; i < 3; i++) {
         Random[i] = UnityEngine.Random.Range(0,10);
-        while (Random[0] == Random[i] && i != 0) {
-          Random[i] = UnityEngine.Random.Range(0,10);
-        }
-        while (Random[1] == Random[i] && i != 1) {
-          Random[i] = UnityEngine.Random.Range(0,10);
-        }
-        while (Random[2] == Random[i] && i != 2) {
+        while ((Random[i] == Random[0] && i != 0) || (Random[i] == Random[1] && i != 1) || (Random[i] == Random[2] && i != 2)) {
           Random[i] = UnityEngine.Random.Range(0,10);
         }
       }
@@ -89,12 +83,15 @@ public class RGBSequences : MonoBehaviour {
       for (int i = 0; i < 10; i++) {
         if (LED == LEDses[i] && i == (((((Random[0] + 1) * (Random[1] + 1) * (Random[2] + 1)) - 1) % 9) + 1) && Vowel == true && Consonant == true) {
           GetComponent<KMBombModule>().HandlePass();
+          Debug.LogFormat("[RGB Sequences #{0}] You submitted the right LED. Module disarmed.", moduleId);
         }
         else if (LED == LEDses[i] && i == (((Random[0] + 1) * (Random[1] + 1) * (Random[2] + 1)) % 10) && ((Vowel == true && Consonant == false) || (Vowel == false && Consonant == true) || (Vowel == false && Consonant == false))) {
           GetComponent<KMBombModule>().HandlePass();
+          Debug.LogFormat("[RGB Sequences #{0}] You submitted the right LED. Module disarmed.", moduleId);
         }
         else if (LED == LEDses[i]) {
           GetComponent<KMBombModule>().HandleStrike();
+          Debug.LogFormat("[RGB Sequences #{0}] You submitted LED {1}. Wrong! Unacceptable!", moduleId, i);
         }
       }
     }
