@@ -28,6 +28,7 @@ public class RGBSequences : MonoBehaviour {
     string SN = "";
     bool Vowel = false;
     bool Consonant = false;
+    bool Exist = false;
 
     void Awake () {
         moduleId = moduleIdCounter++;
@@ -84,15 +85,91 @@ public class RGBSequences : MonoBehaviour {
         if (LED == LEDses[i] && i == (((((Random[0] + 1) * (Random[1] + 1) * (Random[2] + 1)) - 1) % 9) + 1) && Vowel == true && Consonant == true) {
           GetComponent<KMBombModule>().HandlePass();
           Debug.LogFormat("[RGB Sequences #{0}] You submitted the right LED. Module disarmed.", moduleId);
+          StartCoroutine(YouSolvedItYay());
         }
         else if (LED == LEDses[i] && i == (((Random[0] + 1) * (Random[1] + 1) * (Random[2] + 1)) % 10) && ((Vowel == true && Consonant == false) || (Vowel == false && Consonant == true) || (Vowel == false && Consonant == false))) {
           GetComponent<KMBombModule>().HandlePass();
           Debug.LogFormat("[RGB Sequences #{0}] You submitted the right LED. Module disarmed.", moduleId);
+          StartCoroutine(YouSolvedItYay());
         }
         else if (LED == LEDses[i]) {
           GetComponent<KMBombModule>().HandleStrike();
           Debug.LogFormat("[RGB Sequences #{0}] You submitted LED {1}. Wrong! Unacceptable!", moduleId, i);
         }
+      }
+    }
+
+    IEnumerator YouSolvedItYay() {
+      while (true) {
+        if (Exist == true) {
+          Colores[1].GetComponent<MeshRenderer>().material = Things[2];
+          yield return new WaitForSeconds(.05F);
+          Colores[2].GetComponent<MeshRenderer>().material = Things[2];
+          yield return new WaitForSeconds(.05F);
+          goto FuckYouWhore;
+        }
+        Colores[0].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        Colores[1].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        Colores[2].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        FuckYouWhore:
+        Colores[0].GetComponent<MeshRenderer>().material = Things[0];
+        Colores[3].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        Colores[1].GetComponent<MeshRenderer>().material = Things[0];
+        Colores[4].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        Colores[2].GetComponent<MeshRenderer>().material = Things[0];
+        Colores[5].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        Colores[3].GetComponent<MeshRenderer>().material = Things[0];
+        Colores[6].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        Colores[4].GetComponent<MeshRenderer>().material = Things[0];
+        Colores[7].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        Colores[5].GetComponent<MeshRenderer>().material = Things[0];
+        Colores[8].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        Colores[6].GetComponent<MeshRenderer>().material = Things[0];
+        Colores[9].GetComponent<MeshRenderer>().material = Things[2];
+        Exist = true;
+        yield return new WaitForSeconds(.05F);
+        Colores[7].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
+        Colores[8].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
+        Colores[8].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        Colores[7].GetComponent<MeshRenderer>().material = Things[2];
+        yield return new WaitForSeconds(.05F);
+        Colores[6].GetComponent<MeshRenderer>().material = Things[2];
+        Colores[9].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
+        Colores[5].GetComponent<MeshRenderer>().material = Things[2];
+        Colores[8].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
+        Colores[4].GetComponent<MeshRenderer>().material = Things[2];
+        Colores[7].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
+        Colores[3].GetComponent<MeshRenderer>().material = Things[2];
+        Colores[6].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
+        Colores[2].GetComponent<MeshRenderer>().material = Things[2];
+        Colores[5].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
+        Colores[1].GetComponent<MeshRenderer>().material = Things[2];
+        Colores[4].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
+        Colores[0].GetComponent<MeshRenderer>().material = Things[2];
+        Colores[3].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
+        Colores[2].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
+        Colores[1].GetComponent<MeshRenderer>().material = Things[0];
+        yield return new WaitForSeconds(.05F);
       }
     }
     //U addw the tiwirub cplay
