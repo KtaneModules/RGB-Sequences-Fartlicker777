@@ -20,12 +20,12 @@ public class RGBSequences : MonoBehaviour {
     private string[] ColorSequence = {"RKBKGBGRKG","BBGKKRKRGB","KRKGGGRRRB","RGGBKKKGRG","RRKBRBGBGK","GKBRRKBBBG","RBRBGRBKGK","GRKBBBRRBG","KBRRBRGKKB","BBGBRBRBBR"};
     int[] Random = {0,0,0};
     int NumberVenn = 0;
-    string ColorVenn = "KRGYBMCW";
+    string ColorVenn = "KRGYBMCW"; string Numberfucker = "0123456789";
     string StringOne = "";
     string StringTwo = "";
     string StringThree = "";
     string StringFour = "";
-    string SN = "";
+    string SN = "AAAAAA";
     bool Vowel = false;
     bool Consonant = false;
     bool Exist = false;
@@ -44,7 +44,7 @@ public class RGBSequences : MonoBehaviour {
         if (SN[i].ToString() == "A" || SN[i].ToString() == "E" || SN[i].ToString() == "I" || SN[i].ToString() == "O" || SN[i].ToString() == "U") {
           Vowel = true;
         }
-        else {
+        else if (Numberfucker.Contains(SN[i].ToString())) {
           Consonant = true;
         }
       }

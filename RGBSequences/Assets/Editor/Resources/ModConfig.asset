@@ -14,7 +14,10 @@ MonoBehaviour:
   id: RGBSequences
   title: RGB Sequences
   author: me
-  description: 
+  description: 'What are you, if not less than the sum of your parts?
+
+
+    Manual can be found at ktane.timwi.de'
   version: 
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 6d3abfad465ac764585012682663e098, type: 3}
