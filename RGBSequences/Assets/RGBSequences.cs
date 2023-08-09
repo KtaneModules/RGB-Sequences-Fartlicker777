@@ -16,6 +16,7 @@ public class RGBSequences : MonoBehaviour {
    public KMRuleSeedable RS;
    public KMColorblindMode ColorblindMode;
    public TextMesh[] CBText;
+   public VoltageMeterReader VMR;
    bool cbMode = false;
 
    static int moduleIdCounter = 1;
@@ -140,7 +141,7 @@ public class RGBSequences : MonoBehaviour {
          NumberVenn = 0;
       }
       Debug.LogFormat("[RGB Sequences #{0}] The chosen sequences are {1}, {2}, and {3} to make {4}.", moduleId, Random[0] + 1, Random[1] + 1, Random[2] + 1, StringFour);
-      if (Vowel && Consonant) {
+      if ((Vowel && Consonant) || VMR.VoltageMeterInt() < 5) {
          answer = (((((Random[0] + 1) * (Random[1] + 1) * (Random[2] + 1)) - 1) % 9) + 1);
       }
       else {

@@ -529,6 +529,7 @@ GameObject:
   - component: {fileID: 114634475506180202}
   - component: {fileID: 114054584027724374}
   - component: {fileID: 114205199115305330}
+  - component: {fileID: 114566266052359318}
   m_Layer: 0
   m_Name: Template
   m_TagString: Untagged
@@ -3589,6 +3590,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - KT/Mobile/DiffuseTint
+--- !u!114 &114566266052359318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1676409040304040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb04b9c8d1aae54cae064aa3cb9ece9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bomb: {fileID: 114454383462897410}
 --- !u!114 &114570430299588062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3694,6 +3707,7 @@ MonoBehaviour:
   - {fileID: 102782127054805570}
   - {fileID: 102772149704317650}
   - {fileID: 102709691055924450}
+  VMR: {fileID: 114566266052359318}
 --- !u!114 &114635713470585346
 MonoBehaviour:
   m_ObjectHideFlags: 1
