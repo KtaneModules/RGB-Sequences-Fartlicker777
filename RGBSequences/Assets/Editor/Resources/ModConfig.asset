@@ -17,7 +17,14 @@ MonoBehaviour:
   description: 'What are you, if not less than the sum of your parts?
 
 
-    Manual can be found at ktane.timwi.de'
+    Find the three rows of RGB colors that when added show the colors shown on the
+    module.
+
+
+    Manual can be found at ktane.timwi.de.
+
+
+    If there are any bugs, contact Fartlicker777 on Discord.'
   version: 
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 6d3abfad465ac764585012682663e098, type: 3}
